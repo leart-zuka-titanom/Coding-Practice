@@ -109,3 +109,4 @@ def test_it_detects_truish_strings(value):
 What this will do is hand off all of the values that are in my list to the function itself and treat every single 
 value as its own test.
 """
+# TODO: Continue reading chapter 8 where concepts like fixtures and infrastructure tests are being explained
