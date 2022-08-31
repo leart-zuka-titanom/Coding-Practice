@@ -3,7 +3,8 @@ import json
 from pprint import pprint
 
 """
-It is better to be in a virtual environment when downloading special packages, so you don't mess up certain dependencies especially on linux
+It is better to be in a virtual environment when downloading special packages, so you don't mess up certain dependencies, 
+especially on linux where sometimes having too many dependencies is a cause of frustration and new installation of the entire system : ^).
 In order to do that type:
     $python -m venv venv      //This creates a virtual environment with the name venv
     $source venv/bin/activate //This activates the virtual environment
