@@ -74,19 +74,19 @@ Now let's say we want to test a bunch of different inputs and see if they are al
 
 
 def test_many_inputs():
-    assert string_to_bool('yes')  # detects lower case
+    assert string_to_bool("yes")  # detects lower case
 
-    assert string_to_bool('YeS')  # detects odd case
+    assert string_to_bool("YeS")  # detects odd case
 
-    assert string_to_bool('YES')  # detects upper case
+    assert string_to_bool("YES")  # detects upper case
 
-    assert string_to_bool('1')  # detects positive str int
+    assert string_to_bool("1")  # detects positive str int
 
-    assert string_to_bool('true')  # detects true
+    assert string_to_bool("true")  # detects true
 
-    assert string_to_bool('true ')  # detects trailing space
+    assert string_to_bool("true ")  # detects trailing space
 
-    assert string_to_bool(' true')  # detects leading space
+    assert string_to_bool(" true")  # detects leading space
 
 
 """
@@ -95,10 +95,12 @@ This test will pass no problem whatsoever but it is without a doubt fucking reta
 This is where parametrization comes into play.
 """
 
-true_values = ['yes', '1', 'Yes', 'TRUE', 'TruE', 'True', 'true']
+true_values = ["yes", "1", "Yes", "TRUE", "TruE", "True", "true"]
 
 
-@pytest.mark.parametrize('value', true_values)  # Here we're telling pytest that value is the name to sue for the argument in the test method
+@pytest.mark.parametrize(
+    "value", true_values
+)  # Here we're telling pytest that value is the name to sue for the argument in the test method
 def test_it_detects_truish_strings(value):
     assert string_to_bool(value)
 
