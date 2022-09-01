@@ -1,7 +1,13 @@
 #Virtual environments
+
 Chapter 1/venv/
+
 Chapter 2/venv/
 
 Chapter 8/venv/
+
 #Random Stuff
+
 .idea/
+
+Chapter 8/__pycache__/
