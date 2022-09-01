@@ -100,7 +100,7 @@ true_values = ["yes", "1", "Yes", "TRUE", "TruE", "True", "true"]
 
 @pytest.mark.parametrize(
     "value", true_values
-)  # Here we're telling pytest that value is the name to sue for the argument in the test method
+)  # Here we're telling pytest that value is the name to use for the argument in the test method
 def test_it_detects_truish_strings(value):
     assert string_to_bool(value)
 
