@@ -25,7 +25,7 @@ On the other hand, if you're a maniac, you can use then -v flag to show the outp
 
 Certain conventions are used to name tests:
     - The testing directory needs to be names tests
-    - The tiles need to be prefixed with test; i.e. test_basic.py, or suffixed with test.py
+    - The files need to be prefixed with test; i.e. test_basic.py, or suffixed with test.py
     - Test functions need to be prefixed with test_; i.e. def testsimple():
     - Test classes need to be prefixed with Test; i.e. class TestSimple:
     - Test methods follow the same conventions as functions, prefixed with test_: i.e. def test_method():
