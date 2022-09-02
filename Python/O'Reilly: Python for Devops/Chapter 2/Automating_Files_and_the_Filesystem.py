@@ -92,3 +92,9 @@ def read_json_right():
             policy, opened_file
         )  # In order to then write json files you can use the function dump()
         pprint(policy)
+
+"""
+The book now talks about some other languages used in configuration files like YAML or languages used in data serialization like XML.
+I will not talk about them here since first I've never used them and second if I feel the need to learn them I will do so in the future.
+(Call me lazy ion care)
+"""
