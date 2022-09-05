@@ -298,7 +298,7 @@ The tuple consists of the current path, a list of directories, and a list of fil
 """
 
 
-def walk_path(parent_path):
+def walk_path(parent_path):  # Rewrite of the function walk_path using os.walk
     for parent_path, directories, files in os.walk(parent_path):
         print(f"Checking: {parent_path}")
         for file_name in files:
