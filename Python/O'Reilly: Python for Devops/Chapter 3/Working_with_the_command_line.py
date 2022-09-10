@@ -16,18 +16,23 @@ Python offers tools for interacting with systems and shells.
 One of these tools is the sys modules, which offers access to variables and methods closely tied to the Python interpreter.
 """
 
+
 def sys_module():
     """
     There are two dominant ways to interpret bytes during reading. The first, little endian, interprets each subsequent byte as having higher
     significance than the previous one. The second, big endian, assumes the first byte has the greatest significance and move down from there.
     """
-    print(sys.byteorder) # Prints the byte order of the system
+    print(sys.byteorder)  # Prints the byte order of the system
 
-    print(sys.getsizeof(1)) # Returns the size of an object in bytes. This is useful when dealing with limited amounts of memory.
+    print(
+        sys.getsizeof(1)
+    )  # Returns the size of an object in bytes. This is useful when dealing with limited amounts of memory.
 
-    print(sys.getrecursionlimit()) # Returns the maximum depth of the Python interpreter's stack.
+    print(
+        sys.getrecursionlimit()
+    )  # Returns the maximum depth of the Python interpreter's stack.
 
-    print(sys.platform) # Returns the platform on which the interpreter is running.
+    print(sys.platform)  # Returns the platform on which the interpreter is running.
 
     """
     A more common situation is that you want to use a language feature or module that is only available in specific versions of Python. You can use 
@@ -39,4 +44,6 @@ def sys_module():
     elif sys.version_info.minor < 7:
         print("You are not running the latest version of Python")
     else:
-        print(f"You are running Python {sys.version_info.major}.{sys.version_info.minor} and all is well ^_^")
+        print(
+            f"You are running Python {sys.version_info.major}.{sys.version_info.minor} and all is well ^_^"
+        )
