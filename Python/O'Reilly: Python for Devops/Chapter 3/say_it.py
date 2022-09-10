@@ -5,13 +5,15 @@ To eliminate the need to explicitly call type python on the command line when yo
 top of your file
 """
 
+
 def say_it():
     greeting = "Hello"
     target = "World"
     message = f"{greeting}, {target}!"
     print(message)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     say_it()
 
 """

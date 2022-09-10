@@ -48,23 +48,27 @@ def sys_module_examples():
             f"You are running Python {sys.version_info.major}.{sys.version_info.minor} and all is well ^_^"
         )
 
+
 def os_module_examples():
-        """
-        You have seen the os module used in Chapter 2 for dealing with the filesystem. It also has a grab bag of various attributes and functions
-        related to dealing with the operating system. Here are some examples.
-        """
-        print(os.getcwd()) # Returns the current working directory
+    """
+    You have seen the os module used in Chapter 2 for dealing with the filesystem. It also has a grab bag of various attributes and functions
+    related to dealing with the operating system. Here are some examples.
+    """
+    print(os.getcwd())  # Returns the current working directory
 
-        os.chdir('/tmp') # Changes the current working directory to /tmp
-        print(os.getcwd())
+    os.chdir("/tmp")  # Changes the current working directory to /tmp
+    print(os.getcwd())
 
-        print(os.environ.get('LOGLEVEL')) # Returns the value of the LOGLEVEL environment variable
+    print(
+        os.environ.get("LOGLEVEL")
+    )  # Returns the value of the LOGLEVEL environment variable
 
-        os.environ['LOGLEVEL'] = 'DEBUG' # Sets the LOGLEVEL environment variable to DEBUG
+    os.environ["LOGLEVEL"] = "DEBUG"  # Sets the LOGLEVEL environment variable to DEBUG
 
-        print(os.environ.get('LOGLEVEL'))
+    print(os.environ.get("LOGLEVEL"))
 
-        print(os.getlogin()) # Returns the name of the user logged in
+    print(os.getlogin())  # Returns the name of the user logged in
+
 
 """
 The most common usage of the os module is to get settings from environment variables. These could be the level to set your logging, or secrets
@@ -79,33 +83,45 @@ command-line software and collect its output from within Python. For the majorit
 processes.
 """
 
+
 def subprocess_module_examples():
-    cp = subprocess.run(['ls', '-l'], capture_output=True, universal_newlines=True)
+    cp = subprocess.run(["ls", "-l"], capture_output=True, universal_newlines=True)
     print(cp.stdout)
     """
     subprocess.run returns a CompletedProcess instance once the process completes. In this case we run the shell command ls with the argument -l to 
     see the contents of the current directory. We set it to capture stdout and stderr with the capture_output parameter. We then access the results
     using cp.stdout. If we run ls ls on a nonexistent directory, we get an error message in cp.stderr. 
     """
-    cp = subprocess.run(['ls', '-l', '/nonexistent'], capture_output=True, universal_newlines=True)
+    cp = subprocess.run(
+        ["ls", "-l", "/nonexistent"], capture_output=True, universal_newlines=True
+    )
     print(cp.stderr)
     """
     A better ways to handle errors is by using the check parameter. This raises an exception if the subprocess reports an error
     """
-    cp = subprocess.run(['ls', '-l', '/nonexistent'], capture_output=True, universal_newlines=True, check=True)
+    cp = subprocess.run(
+        ["ls", "-l", "/nonexistent"],
+        capture_output=True,
+        universal_newlines=True,
+        check=True,
+    )
     print(cp.stdout)
+
 
 """
 A sort of problem with Python script is the fact that it runs the written code from top to bottom which is sometimes not ideal. This can be a problem
 if you import a Python script into another one.
 """
+
+
 def say_it():
     greeting = "Hello"
     target = "World"
     message = f"{greeting}, {target}!"
     print(message)
 
-#say_it() # This function run whenever the script runs on the command line and also when the file is imported
+
+# say_it() # This function run whenever the script runs on the command line and also when the file is imported
 
 """
 This should only be done with the most straightforward scripts, however. As already said, if this module is import into another one, it will execute
@@ -116,7 +132,7 @@ run command-line specific code from this block. To modify the script to run a fu
 during import, put the function invocation into the block after the test 
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     say_it()
 
 """
