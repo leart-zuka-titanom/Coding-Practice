@@ -34,3 +34,10 @@ if __name__ == "__main__":
             greeting = sys.argv[greeting_index]  # Get the greeting
 
     say_it(greeting, target)
+
+"""
+This approach is fraught with complications and potential bugs.
+If a user misspells or miscapitalizes a flag, the flag is ignored with no useful feedback.
+If they use commands that are not supported or try to use more than one value with a flag, once again the error is ignored.
+So don't use argv for production code unless specifically set out to write an argument parser.
+"""
